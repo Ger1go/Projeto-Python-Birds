@@ -1,4 +1,6 @@
 class Pessoa:
+    olhos = 2 # -->Quando o atributo está fora do dunder init estamos criando o atributo default, ou atributo de classe.
+
     def __init__(self, *filhos, nome=None, idade=35):
         self.idade = idade
         self.nome = nome
@@ -20,5 +22,10 @@ if __name__ == '__main__':
         print(filho.nome)
     luciano.sobrenome = 'Ramalho'
     del luciano.filhos
+    luciano.olhos = 1
     print(luciano.__dict__)
     print(renzo.__dict__)
+    print(Pessoa.olhos)
+    print(renzo.olhos)
+    print(luciano.olhos)
+    print(id(renzo.olhos), id(renzo.olhos), id(Pessoa.olhos))
